@@ -1,10 +1,3 @@
-// Simple form handling
-document.getElementById("quoteForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    alert("Thank you! Your message has been sent.");
-    this.reset();
-});
 let lastScrollY = window.scrollY;
 const navbar = document.getElementById("mainNav");
 
@@ -123,6 +116,21 @@ document.addEventListener('DOMContentLoaded', () => {
       window.__tickerResizeTimer = setTimeout(computeDuration, 120);
     });
   };
+  // Auto-collapse mobile menu after 3 seconds
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileNav = document.getElementById('mobileNav');
+  const navToggler = document.querySelector('.navbar-toggler');
+
+  if (mobileNav && navToggler) {
+    mobileNav.addEventListener('shown.bs.collapse', () => {
+      // Menu just opened; set timer to close it after 3 seconds
+      setTimeout(() => {
+        const bsCollapse = new bootstrap.Collapse(mobileNav, { toggle: false });
+        bsCollapse.hide();
+      }, 3000);
+    });
+  }
+});
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

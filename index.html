@@ -38,7 +38,7 @@
               <a class="nav-link nav-link-custom" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-link-custom" href="#projects">Portfolio</a>
+              <a class="nav-link nav-link-custom" href="#reviews">Projets</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-link-custom" href="#about">À propos</a>
@@ -75,7 +75,7 @@
             <a class="nav-link nav-link-custom" href="#services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="#projects">Portfolio</a>
+            <a class="nav-link nav-link-custom" href="#reviews">Projets</a>
           </li>
           <li class="nav-item">
             <a class="nav-link nav-link-custom" href="#about">À propos</a>
@@ -110,7 +110,7 @@
             class="col-md-6 d-flex align-items-left justify-content-left text-left text-md-start"
           >
             <h2 class="display-4 fw-bold highlight-sentence animate-left">
-              Demandez plus de votre logement.
+              Demandez plus de votre logement
             </h2>
           </div>
 
@@ -148,7 +148,7 @@
           <div
             class="col-md-6 d-flex align-items-left justify-content-left text-left text-md-start"
           >
-            <h2 class="display-4 fw-bold services-sentence">Nos services.</h2>
+            <h2 class="display-4 fw-bold services-sentence">Nos services</h2>
           </div>
 
           <!-- RIGHT: Text + Button -->
@@ -458,9 +458,13 @@
     </section>
 
     <!-- PROJECT CAROUSEL -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 projects-section">
       <div class="container h-100">
-        <h2 class="display-4 fw-bold projects-title align-items-left justify-content-left text-left text-md-start">Projets Récents</h2>
+        <h2
+          class="display-4 fw-bold projects-title align-items-left justify-content-left text-left text-md-start"
+        >
+          Projets Récents
+        </h2>
 
         <div
           id="projectCarousel"
@@ -514,10 +518,9 @@
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="py-5 bg-gray-light">
+    <section id="about" class="py-5 about-section">
       <div class="container">
-        <h2 class="text-center fw-bold mb-5 section-title">About Joseph</h2>
-
+        <h2 class="text-center fw-bold mb-5 about-title">À propos de Joseph</h2>
         <div class="row align-items-center">
           <div class="col-md-4 text-center mb-4 mb-md-0">
             <img
@@ -529,54 +532,52 @@
 
           <div class="col-md-8">
             <p>
-              Joseph is a seasoned plumber and renovation specialist with over
-              40 years of experience. He leads
-              <strong>Travaux Conseil de Joseph</strong>, offering reliable
-              craftsmanship across plumbing, heating, electrical work, tiling,
-              insulation, and full renovation projects.
+              Je suis <strong>Joseph</strong>, auto - entrepreneur et plombier chauffagiste installateur depuis 1980.
+              Avec mon équipe, nous faisons tous types de travaux de rénovation ou de conseil en architecture d'intérieur.
             </p>
             <p>
-              His work ensures compliance with PMR standards and delivers
-              high-quality, durable results.
+              Fort de plus de 40 ans d'expérience, j'ai acquis une expertise
+              approfondie dans la rénovation
+              intérieure. Mon engagement envers la qualité et la satisfaction du
+              client est au cœur de chaque projet que j'entreprends.
             </p>
+            <p>
+              Mon travail garantit la conformité aux normes PMR et offre
+              des résultats de haute qualité et durables.
+            </p>
+<p> T.V.A. - 30437689000055
+             </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="contact-section py-5">
       <div class="container">
-        <h2 class="text-center fw-bold mb-4 section-title">Ask for a Quote</h2>
+        <h2 class="text-center fw-bold mb-4 contact-title">Contactez-nous</h2>
 
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form id="quoteForm" class="p-4 shadow-sm rounded bg-gray-light">
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Name</label>
-                <input type="text" class="form-control" id="name" required />
-              </div>
+        <!-- Contact description text -->
+        <p class="contact-description text-center mb-5">
+          Pour un devis, contactez-moi par <strong>téléphone</strong>, par <strong>WhatsApp</strong> ou par <strong>mail</strong>.
+        </p>
 
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Email</label>
-                <input type="email" class="form-control" id="email" required />
-              </div>
+        <!-- Contact buttons -->
+        <div class="contact-buttons d-flex justify-content-center gap-4 flex-wrap">
+          <!-- Phone button -->
+          <a href="tel:+33XXXXXXXXXX" class="contact-btn phone-btn" aria-label="Call us">
+            <i class="bi bi-telephone-fill"></i>
+          </a>
 
-              <div class="mb-3">
-                <label class="form-label fw-semibold">Message</label>
-                <textarea
-                  class="form-control"
-                  id="message"
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
+          <!-- WhatsApp button -->
+          <a href="https://wa.me/33XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp-btn" aria-label="WhatsApp us">
+            <i class="bi bi-whatsapp"></i>
+          </a>
 
-              <button type="submit" class="btn custom-btn-primary w-100 py-2">
-                Send Message
-              </button>
-            </form>
-          </div>
+          <!-- Email button -->
+          <a href="mailto:emailde@joseph.fr" class="contact-btn email-btn" aria-label="Email us">
+            <i class="bi bi-envelope-fill"></i>
+          </a>
         </div>
       </div>
     </section>

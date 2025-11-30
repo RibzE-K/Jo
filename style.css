@@ -20,7 +20,8 @@ body {
   scroll-behavior: smooth;
   background: linear-gradient(
     rgba(6, 47, 82, 0.6),
-    /* dark overlay for contrast */ rgba(6, 47, 82, 0.6)
+    rgba(255, 255, 255, 1),
+    /* dark overlay for contrast */ rgba(255, 255, 255, 1)
   );
 }
 
@@ -88,12 +89,40 @@ body {
   background: var(--color-blue-dark);
   color: var(--color-white);
   transition: 0.2s ease;
+  padding: 0.5rem 1rem !important;
+  font-size: clamp(0.85rem, 2vw, 1rem);
 }
 
 .custom-btn-light:hover {
   background: var(--color-gold-accent);
   transform: translateY(-2px);
   color: var(--color-white) !important;
+}
+
+/* Responsive sizing for small screens */
+@media (max-width: 768px) {
+  .custom-btn-light {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.85rem;
+  }
+
+  .custom-btn-light i {
+    font-size: 0.9rem;
+  }
+  .custom-btn-light i {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-btn-light {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.8rem;
+  }
+
+  .custom-btn-light i {
+    font-size: 0.85rem;
+  }
 }
 
 /* Mobile */
@@ -171,7 +200,6 @@ body {
   background: var(--color-gold-accent);
   border-radius: 0.12em;
   margin: 0.6em 0 0 0;
-  display: none !important;
 }
 
 /* LEFT COLUMN: slightly higher */
@@ -438,7 +466,7 @@ body {
 .reviews-ticker {
   --ticker-width: clamp(500px, 56vw, 560px); /* fixed pill width */
   --review-avatar-size: clamp(72px, 8vw, 100px); /* responsive avatar */
-  background: linear-gradient(180deg, var(--color-white), #fbfaf8);
+  background: var(--color-white);
   /* border-top: 4px solid rgba(201,164,73,0.08); */
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -545,44 +573,61 @@ body {
   }
 }
 
-/* Responsive tweaks 
-@media (max-width: 600px) {
-  .ticker-item {
-    min-width: 300px;
-    padding: 0.4rem 0.9rem;
-  }
-  
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-    flex: 0 0 40px;
-  } 
-  .review-text { font-size: 0.85rem; }
-}
 */
 /* -------------------------------------------------------
-   TITLES WITH GOLD UNDERLINE
+    PROJECTS sections
 ------------------------------------------------------- */
-.projects-title {
+.projects-section {
+  background: var(--color-white) !important;
+  display: flex;
+  align-items: center;
   position: relative;
-  padding-bottom: 0.4rem;
+  border: none !important;
+}
+section#projects.projects-section {
+  background-color: var(--color-white) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none !important;
+}
+.projects-title {
+  display: inline-block;
+  position: relative;
   font-size: 3rem; /* can adjust as needed */
   color: var(--color-blue-dark) !important;
+  text-align: left;
 }
 
 .projects-title::after {
   content: "";
-  width: 60px;
-  height: 3px;
-  background: var(--color-gold-accent);
   display: block;
-  margin: 0.5rem auto 0 auto;
-  border-radius: 2px;
+  /* responsive: scales with font-size (em) and viewport (vw), clamped to reasonable limits */
+  width: clamp(3em, 6vw, 5.5em);
+  height: 4px;
+  background: var(--color-gold-accent);
+  border-radius: 0.12em;
+  margin: 0.6em 0 0.6em 0;
 }
 
-/* -------------------------------------------------------
-   PROJECTS
-------------------------------------------------------- */
+/* Responsive adjustments for projects title on small screens */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .projects-title::after {
+    margin: 0.6em auto 0.6em;
+  }
+  .projects-section .container {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .project-img {
   height: 450px;
   object-fit: cover;
@@ -595,10 +640,117 @@ body {
   max-height: 300px;
   object-fit: cover;
 }
+.about-section {
+  background: var(--color-white) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none !important;
+}
 
+.about-title {
+  display: inline-block;
+  position: relative;
+  font-size: 3rem; /* can adjust as needed */
+  color: var(--color-blue-dark) !important;
+  text-align: left;
+}
+.about-title::after {
+  content: "";
+  display: block;
+  /* responsive: scales with font-size (em) and viewport (vw), clamped to reasonable limits */
+  width: clamp(3em, 6vw, 5.5em);
+  height: 4px;
+  background: var(--color-gold-accent);
+  border-radius: 0.12em;
+  margin: 0.6em 0 0.6em 0;
+}
+
+/* Responsive adjustments for projects title on small screens */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-title::after {
+    margin: 0.6em auto 0.6em;
+  }
+  .about-section .container {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
 /* -------------------------------------------------------
    CONTACT FORM
 ------------------------------------------------------- */
+.contact-section {
+  background: var(--color-white) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none !important;
+}
+
+.contact-title {
+  display: inline-block;
+  position: relative;
+  font-size: 3rem; /* can adjust as needed */
+  color: var(--color-blue-dark) !important;
+  text-align: left;
+}
+.contact-title::after {
+  content: "";
+  display: block;
+  /* responsive: scales with font-size (em) and viewport (vw), clamped to reasonable limits */
+  width: clamp(3em, 6vw, 5.5em);
+  height: 4px;
+  background: var(--color-gold-accent);
+  border-radius: 0.12em;
+  margin: 0.6em 0 0.6em 0;
+}
+
+/* Contact description text */
+.contact-description {
+  color: var(--color-blue-primary);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-description strong {
+  color: var(--color-gold-accent);
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-description {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Responsive adjustments for projects title on small screens */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-title::after {
+    margin: 0.6em auto 0.6em;
+  }
+  .contact-section .container {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .custom-btn-primary {
   background: var(--color-blue-primary);
   color: var(--color-white);
@@ -609,4 +761,41 @@ body {
 .custom-btn-primary:hover {
   background: var(--color-blue-dark);
   transform: translateY(-2px);
+}
+
+/* Contact buttons container */
+.contact-buttons {
+  margin-top: 2rem;
+}
+
+/* Transparent contact button */
+.contact-btn {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 164, 73, 0.15);
+  border: 2px solid rgba(201, 164, 73, 0.3);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: var(--color-gold-accent);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-btn:hover {
+  background: rgba(201, 164, 73, 0.25);
+  border-color: var(--color-gold-accent);
+  transform: translateY(-4px);
+  color: var(--color-gold-accent);
+}
+
+/* Responsive sizing */
+@media (max-width: 600px) {
+  .contact-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
 }
