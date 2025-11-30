@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travaux Conseil Joseph</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="mainNav" class="navbar fixed-top shadow-sm py-2 custom-navbar">
+      <div class="container navbar-grid">
+        <!-- LEFT: LOGO -->
+        <div class="nav-left d-flex align-items-center">
+          <a class="navbar-brand fw-bold m-0 text-white logo-text" href="#hero">
+            Travaux Rénovation<br />
+            <span class="logo-joseph">Joseph</span>
+          </a>
+        </div>
+
+        <!-- CENTER: NAV ITEMS -->
+        <div
+          class="nav-center d-none d-lg-flex justify-content-center align-items-center"
+        >
+          <ul class="navbar-nav flex-row gap-4">
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="#projects">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-custom" href="#about">À propos</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RIGHT: CTA BUTTON -->
+        <div class="nav-right d-flex justify-content-end align-items-center">
+          <a
+            class="btn custom-btn-light rounded-3 px-3 fw-semibold d-flex align-items-center gap-2"
+            href="#contact"
+          >
+            Contactez-nous
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- MOBILE TOGGLER -->
+        <button
+          class="navbar-toggler ms-2 d-lg-none custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mobileNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div class="collapse mobile-nav" id="mobileNav">
+        <ul class="navbar-nav px-3 py-2">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#projects">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#about">À propos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="vh-100 d-flex align-items-center text-white hero-section"
+    >
+      <div class="container text-center">
+        <h1 class="display-3 fw-bold">Expert en Rénovations</h1>
+        <p class="lead mt-3">Un savoir-faire fiable depuis 1980.</p>
+        <a
+          href="#services"
+          class="btn custom-btn-light btn-lg mt-4 px-4 rounded-3"
+        >
+          Découvrez nos services
+        </a>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlight" class="d-flex align-items-center highlight-section">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <!-- LEFT: Big Sentence -->
+          <div
+            class="col-md-6 d-flex align-items-left justify-content-left text-left text-md-start"
+          >
+            <h2 class="display-4 fw-bold highlight-sentence animate-left">
+              Demandez plus de votre logement.
+            </h2>
+          </div>
+
+          <!-- RIGHT: Text + Button -->
+          <div
+            class="col-md-6 d-flex flex-column justify-content-center animate-right"
+          >
+            <p class="lead mb-4">
+              Chez Travaux Conseil Joseph, nous mettons à votre service des
+              décennies d'expertise pour chaque projet. De la plomberie à la
+              rénovation, nous veillons à ce que chaque maison soit
+              fonctionnelle, esthétique et construite pour durer.
+            </p>
+            <div
+              class="nav-right d-flex justify-content-end align-items-center"
+            >
+              <a
+                class="btn custom-btn-light rounded-3 px-3 fw-semibold d-flex align-items-center gap-2"
+                href="#contact"
+              >
+                Contactez-nous
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="d-flex align-items-center services-section">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <!-- LEFT: Big Sentence -->
+          <div
+            class="col-md-6 d-flex align-items-left justify-content-left text-left text-md-start"
+          >
+            <h2 class="display-4 fw-bold services-sentence">Nos services.</h2>
+          </div>
+
+          <!-- RIGHT: Text + Button -->
+          <div
+            class="col-md-6 d-flex flex-column justify-content-left text-left text-md-start"
+          >
+            <p class="lead mb-4">
+              Demandez plus d'informations :
+              <span class="email-de-jo">emailde@joseph.fr</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TILE GRID (2 columns x 4 rows) -->
+    <section id="tiles" class="py-5 tiles-section">
+      <div class="row g-0 justify-content-center">
+        <!-- Repeat 8 tiles (2 per row) -->
+        <div class="col-6 d-flex justify-content-end">
+          <div class="tile" data-bg="" aria-label="Tile 1">
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Conseil</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 d-flex justify-content-start">
+          <div class="tile" data-bg="" aria-label="Tile 2">
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Rénovations de A à Z</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-0 justify-content-center">
+        <div class="col-6 d-flex justify-content-end">
+          <div class="tile" data-bg="" aria-label="Tile 3">
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Cuisines</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 d-flex justify-content-start">
+          <div
+            class="tile"
+            data-bg="./images/tile-sanitaire.jpg"
+            aria-label="Tile 4"
+          >
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Sanitaires et Salles de bain</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-0 justify-content-center">
+        <div class="col-6 d-flex justify-content-end">
+          <div
+            class="tile"
+            data-bg="./images/tile-chauffage.jpg"
+            aria-label="Tile 5"
+          >
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Chauffages</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 d-flex justify-content-start">
+          <div class="tile" data-bg="" aria-label="Tile 6">
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Électricité</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-0 justify-content-center">
+        <div class="col-6 d-flex justify-content-end">
+          <div class="tile" data-bg="" aria-label="Tile 7">
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Isolation</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 d-flex justify-content-start">
+          <div
+            class="tile"
+            data-bg="./images/tile-sols.jpg"
+            aria-label="Tile 8"
+          >
+            <div class="tile-content">
+              <h3 class="h5 mb-1">Sols</h3>
+              <p class="small mb-0">Brève description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS TICKER -->
+    <section id="reviews" class="py-4 reviews-ticker">
+      <div class="ticker-viewport">
+        <div class="ticker-track">
+          <!-- Each .ticker-item is pill-shaped. data-stars controls star count (0..5) -->
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 1"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/review-lazarevic.jpg"
+              alt="Reviewer 1"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Lazarevic</strong>
+                <span class="review-location text-muted">— Paris 06</span>
+                <small class="text-muted">• 2025-11-04</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted">Plomberie, kitchinette</small>
+              </div>
+              <p class="mb-0 review-text">
+                Excellente réactivité, créativité, entente mutuelle ont débouché
+                sur un résultat final à ma grande satisfaction.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 2"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/avatar2.jpg"
+              alt="Reviewer 2"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Madelaine</strong>
+                <span class="review-location text-muted">— Colombes</span>
+                <small class="text-muted">• 2025-11-04</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted"
+                  >Sanitaires - douche, lavabo, baignoire, bidet</small
+                >
+              </div>
+              <p class="mb-0 review-text">
+                Très bons conseils et rendu correspondant à ce qu’on voulait
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 3"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/review-utilisateur.jpg"
+              alt="Reviewer 3"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Utilisateur Travaux.com</strong>
+                <span class="review-location text-muted">— Issy 15</span>
+                <small class="text-muted">• 2025-11-03</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted">Rénovations WC et carrelage</small>
+              </div>
+              <p class="mb-0 review-text">
+                Très professionnel, Joseph a su nous porter conseil pour nos
+                travaux.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 4"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/review-utilisateur2.jpg"
+              alt="Reviewer 4"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Utilisateur Travaux.com</strong>
+                <span class="review-location text-muted">— Paris 15</span>
+                <small class="text-muted">• 2025-08-27</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted">Installation sanitaires</small>
+              </div>
+              <p class="mb-0 review-text">
+                Travaux très bien fait, très bonne relation et conseil.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 5"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/avatar5.jpg"
+              alt="Reviewer 5"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Salhi</strong>
+                <span class="review-location text-muted">— Romainville</span>
+                <small class="text-muted">• 2025-08-10</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted">Petits travaux de plomberie</small>
+              </div>
+              <p class="mb-0 review-text">
+                Merci pour vos conseils sur l'état de ma machine à laver. J'ai
+                pu éviter ainsi des dépenses inutiles et importantes en
+                réparation.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 6"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/avatar6.jpg"
+              alt="Reviewer 6"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Mimoun gad</strong>
+                <span class="review-location text-muted">— </span>
+                <small class="text-muted">• 2025-07-01</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted">Peinture parquet</small>
+              </div>
+              <p class="mb-0 review-text">.</p>
+            </div>
+          </article>
+
+          <article
+            class="ticker-item d-flex align-items-center gap-3"
+            data-stars="5"
+            aria-label="Review 7"
+          >
+            <img
+              class="review-avatar rounded-circle"
+              src="./images/review-ribal.jpg"
+              alt="Reviewer 7"
+            />
+            <div class="review-body">
+              <div class="d-flex align-items-center gap-2 review-meta">
+                <strong class="reviewer-name">Ribal</strong>
+                <span class="review-location text-muted"
+                  >— Issy-les-Moulineaux</span
+                >
+                <small class="text-muted">• 2025-11-29</small>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1">
+                <div class="review-stars" aria-hidden="true"></div>
+                <small class="text-muted">Cuisine</small>
+              </div>
+              <p class="mb-0 review-text">
+                Arrangeant et réactif, les travaux ont été réalisés avec
+                attention aux détails. Travaux réalisés : dépose et pose de
+                carrelage sol cuisine + Faux plafond avec spot pour cuisine +
+                Pose cuisine
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- duplicated track for seamless loop (JS will clone on load if needed) -->
+        <div class="ticker-track ticker-track--clone" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- PROJECT CAROUSEL -->
+    <section id="projects" class="py-5">
+      <div class="container h-100">
+        <h2 class="display-4 fw-bold projects-title align-items-left justify-content-left text-left text-md-start">Projets Récents</h2>
+
+        <div
+          id="projectCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner rounded shadow">
+            <div class="carousel-item active">
+              <img
+                src="assets/project1.jpg"
+                class="d-block w-100 project-img"
+                alt="Project"
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="assets/project2.jpg"
+                class="d-block w-100 project-img"
+                alt="Project"
+              />
+            </div>
+
+            <div class="carousel-item">
+              <img
+                src="assets/project3.jpg"
+                class="d-block w-100 project-img"
+                alt="Project"
+              />
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5 bg-gray-light">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5 section-title">About Joseph</h2>
+
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center mb-4 mb-md-0">
+            <img
+              src="assets/joseph.jpg"
+              alt="Joseph"
+              class="img-fluid rounded shadow about-img"
+            />
+          </div>
+
+          <div class="col-md-8">
+            <p>
+              Joseph is a seasoned plumber and renovation specialist with over
+              40 years of experience. He leads
+              <strong>Travaux Conseil de Joseph</strong>, offering reliable
+              craftsmanship across plumbing, heating, electrical work, tiling,
+              insulation, and full renovation projects.
+            </p>
+            <p>
+              His work ensures compliance with PMR standards and delivers
+              high-quality, durable results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4 section-title">Ask for a Quote</h2>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <form id="quoteForm" class="p-4 shadow-sm rounded bg-gray-light">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Name</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Email</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn custom-btn-primary w-100 py-2">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

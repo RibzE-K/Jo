@@ -1,0 +1,612 @@
+/* -------------------------------------------------------
+   COLOR PALETTE VARIABLES
+------------------------------------------------------- */
+:root {
+  --color-white: #ffffff;
+  --color-blue-primary: #0a4c8c;
+  --color-blue-dark: #062f52;
+  --color-gold-accent: #c9a449;
+  --color-gray-light: #f3f4f6;
+  --color-gray-text: #6b7280;
+}
+
+/* -------------------------------------------------------
+   GLOBAL
+------------------------------------------------------- */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-gray-text);
+  padding-top: 80px;
+  scroll-behavior: smooth;
+  background: linear-gradient(
+    rgba(6, 47, 82, 0.6),
+    /* dark overlay for contrast */ rgba(6, 47, 82, 0.6)
+  );
+}
+
+.bg-gray-light {
+  background: var(--color-gray-light);
+}
+
+/* -------------------------------------------------------
+   NAVBAR
+------------------------------------------------------- */
+.custom-navbar {
+  background: var(--color-white);
+  border-bottom: 4px solid var(--color-gold-accent);
+}
+
+.navbar-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  width: 100%;
+}
+#mainNav {
+  transition: transform 0.35s ease, background-color 0.2s ease;
+}
+
+/* Hidden state */
+.nav-hide {
+  transform: translateY(-100%);
+}
+
+/* Visible state */
+.nav-show {
+  transform: translateY(0);
+}
+
+/* Logo */
+.logo-text {
+  line-height: 1.1;
+  font-size: 1.05rem;
+  text-align: left;
+  color: var(--color-blue-primary) !important;
+}
+
+.logo-joseph {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+  text-align: center;
+  margin-top: -2px;
+  color: var(--color-blue-dark) !important;
+}
+
+/* Navbar links */
+.nav-link-custom {
+  color: var(--color-blue-primary) !important;
+  font-weight: 600;
+}
+
+.nav-link-custom:hover {
+  color: var(--color-gold-accent) !important;
+}
+
+/* Button (right-side) */
+.custom-btn-light {
+  background: var(--color-blue-dark);
+  color: var(--color-white);
+  transition: 0.2s ease;
+}
+
+.custom-btn-light:hover {
+  background: var(--color-gold-accent);
+  transform: translateY(-2px);
+  color: var(--color-white) !important;
+}
+
+/* Mobile */
+.custom-toggler {
+  color: var(--color-gold-accent);
+  border: none;
+  background: transparent;
+  padding: 0.25rem;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23c9a449' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-size: 1.25rem 1.25rem;
+  filter: none;
+}
+.custom-toggler:focus {
+  box-shadow: none;
+}
+@media (max-width: 992px) {
+  .nav-center {
+    display: none !important;
+  }
+  .navbar-grid {
+    grid-template-columns: 1fr auto;
+  }
+  .nav-right {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------
+   HERO SECTION
+------------------------------------------------------- */
+.hero-section {
+  /* Background image + overlay */
+  background: linear-gradient(
+      rgba(6, 47, 82, 0.6),
+      /* dark overlay for contrast */ rgba(6, 47, 82, 0.6)
+    ),
+    url("./images/placo-before.jpg") no-repeat center center;
+  background-size: cover; /* cover full hero area */
+  background-attachment: fixed; /* optional parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--color-white);
+  position: relative;
+}
+
+/* -------------------------------------------------------
+   HIGHLIGHTS SECTION
+------------------------------------------------------- */
+.highlight-section {
+  height: 75vh; /* 75% of viewport height */
+  background: var(--color-white) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Left Big Sentence */
+.highlight-sentence {
+  display: inline-block;
+  position: relative;
+  font-size: 3rem; /* can adjust as needed */
+  color: var(--color-blue-dark) !important;
+}
+
+/* golden accent bar centered with the highlight sentence */
+.highlight-sentence::after {
+  content: "";
+  display: block;
+  /* responsive: scales with font-size (em) and viewport (vw), clamped to reasonable limits */
+  width: clamp(3em, 6vw, 5.5em);
+  height: 4px;
+  background: var(--color-gold-accent);
+  border-radius: 0.12em;
+  margin: 0.6em 0 0 0;
+  display: none !important;
+}
+
+/* LEFT COLUMN: slightly higher */
+.highlight-section .col-md-6:first-child {
+  margin-top: -25vh; /* move left column up by 25% of viewport height */
+}
+
+/* Right paragraph and button */
+.highlight-section p {
+  color: var(--color-blue-primary) !important;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  margin: 0;
+}
+/* RIGHT COLUMN: slightly higher */
+.highlight-section .col-md-6:last-child {
+  margin-top: +25vh; /* move right column down by 25% of viewport height */
+}
+
+/* Button hover */
+.highlight-section .custom-btn-light:hover {
+  background: var(--color-gold-accent);
+  color: var(--color-blue-dark);
+}
+/* Initial hidden states */
+.animate-left,
+.animate-right {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Slide in from left */
+.animate-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in from below for right column */
+.animate-right.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .highlight-sentence {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .highlight-section .col-md-6 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .highlight-section .col-md-6:first-child {
+    margin-top: +10vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .highlight-section .col-md-6:last-child {
+    margin-top: 0;
+  }
+  .highlight-sentence::after {
+    margin: 0.6em auto 0;
+  }
+  .highlight-section .col-md-6:last-child p,
+  .highlight-section .col-md-6:last-child .lead {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* -------------------------------------------------------
+   SERVICES
+------------------------------------------------------- */
+.services-section {
+  background: var(--color-white) !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: none !important;
+}
+/* Left Big Sentence */
+.services-sentence {
+  display: inline-block;
+  position: relative;
+  font-size: 3rem; /* can adjust as needed */
+  color: var(--color-blue-dark) !important;
+}
+
+/* golden accent bar centered with the highlight sentence */
+.services-sentence::after {
+  content: "";
+  display: block;
+  /* responsive: scales with font-size (em) and viewport (vw), clamped to reasonable limits */
+  width: clamp(3em, 6vw, 5.5em);
+  height: 4px;
+  background: var(--color-gold-accent);
+  border-radius: 0.12em;
+  margin: 0.6em 0 0 0;
+}
+
+/* Right paragraph */
+.services-section p {
+  color: var(--color-blue-primary) !important;
+  font-size: clamp(0.8rem, 1.3vw, 1.025rem);
+  text-align: right;
+  margin: 0;
+}
+.email-de-jo {
+  font-size: 1rem;
+  font-weight: 300;
+  display: block;
+  text-align: right;
+  margin-top: -2px;
+  color: var(--color-blue-primary) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .services-sentence {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .services-section .col-md-6 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .services-section .col-md-6:first-child {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .services-sentence::after {
+    margin: 0.6em auto 0;
+  }
+}
+
+/* -------------------------------------------------------
+   TILE GRID
+------------------------------------------------------- */
+/* TILE GRID: ensure equal horizontal and vertical gaps */
+.tiles-section {
+  --tile-gap: 6px; /* fixed gap value */
+}
+
+/* Force the rows to keep exactly two columns and never wrap */
+.tiles-section .row {
+  display: flex;
+  flex-wrap: nowrap; /* prevent Bootstrap from wrapping columns onto a new line */
+  gap: var(--tile-gap); /* equal horizontal and vertical spacing */
+  margin: 0; /* reset bootstrap row negative margins */
+  justify-content: center;
+  padding-block: calc(var(--tile-gap) / 2);
+}
+
+/* Ensure each column is always 50% of the row (two per row at all sizes) */
+.tiles-section .col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Make tiles fill their column and remain square; remove forced max-width so they can shrink */
+.tile {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* TILE GRID: 2 columns x multiple rows, small equal gaps */
+.tiles-section {
+  background: var(--color-white);
+}
+
+/* Tile base */
+.tile {
+  position: relative;
+  width: 100%;
+  max-width: 520px; /* max width per tile */
+  aspect-ratio: 1 / 1; /* keep tiles square */
+  background-color: var(--color-gray-light);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  border: 1px solid rgba(6, 47, 82, 0.06);
+  display: block;
+  /* allow authors to set background via inline style or JS later */
+}
+
+/* subtle bottom gradient for text readability */
+.tile::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 47, 82, 0) 0%,
+    rgba(6, 47, 82, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* content pinned bottom-left */
+.tile-content {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  z-index: 2;
+  color: var(--color-white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+/* title + small text */
+.tile-content h3 {
+  margin: 0;
+  color: var(--color-white);
+  font-weight: 700;
+  /* responsive font-size: scales down on small screens, caps on large */
+  font-size: clamp(1rem, 3.2vw, 1.25rem);
+}
+
+.tile-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  /* smaller supporting text that scales with viewport */
+  font-size: clamp(0.75rem, 2.2vw, 0.95rem);
+}
+
+/* Responsive tweaks: keep two columns on small+ screens; on very small screens stack */
+@media (max-width: 768px) {
+  .tiles-section .col-12.col-sm-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .tile {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+}
+
+/* ---------------------------
+   REVIEWS TICKER — fixed-width, wrapped content (keeps continuous motion)
+   - All pills use the same responsive fixed width (--ticker-width)
+   - Review text wraps inside the pill; avatar size scales with the pill
+   - Tracks remain inline-flex and animation is unchanged so motion is preserved
+   --------------------------- */
+.reviews-ticker {
+  --ticker-width: clamp(500px, 56vw, 560px); /* fixed pill width */
+  --review-avatar-size: clamp(72px, 8vw, 100px); /* responsive avatar */
+  background: linear-gradient(180deg, var(--color-white), #fbfaf8);
+  /* border-top: 4px solid rgba(201,164,73,0.08); */
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.ticker-viewport {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap; /* keep tracks on a single line (prevents stacking) */
+}
+
+/* inline so original + clone sit horizontally in one row */
+.ticker-track,
+.ticker-track--clone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  vertical-align: middle;
+}
+
+/* fixed-size pill: identical width for every ticker item, content wraps */
+.ticker-item {
+  background: var(--color-white);
+  color: var(--color-blue-dark);
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  box-shadow: 0 6px 18px rgba(6, 47, 82, 0.06);
+
+  /* FIXED SIZE: enforce identical width for all items */
+  flex: 0 0 var(--ticker-width);
+  width: var(--ticker-width);
+  min-width: var(--ticker-width);
+  max-width: var(--ticker-width);
+
+  align-items: center;
+  gap: 1rem;
+
+  /* allow internal wrapping (prevent the pill from expanding) */
+  white-space: normal;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* responsive avatar size using the css var */
+.review-avatar {
+  width: var(--review-avatar-size);
+  height: var(--review-avatar-size);
+  object-fit: cover;
+  flex: 0 0 var(--review-avatar-size);
+  border-radius: 50%;
+  border: 2px solid rgba(6, 47, 82, 0.06);
+}
+
+/* constrain body width so text wraps predictably inside the fixed pill */
+.review-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.15rem;
+  /* leave space for avatar + paddings (adjust 3rem if you change paddings) */
+  max-width: calc(var(--ticker-width) - var(--review-avatar-size) - 3rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ensure review text wraps within the fixed pill width */
+.review-text {
+  color: var(--color-blue-primary);
+  opacity: 0.95;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* animation: scroll the whole combined width (original + clone) */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  } /* moves by half because content is duplicated */
+}
+
+/* CSS variable --ticker-duration will be set by JS based on content width */
+.ticker-track,
+.ticker-track--clone {
+  animation: ticker-scroll var(--ticker-duration, 24s) linear infinite;
+}
+
+/* pause on hover for usability */
+.ticker-viewport:hover .ticker-track,
+.ticker-viewport:hover .ticker-track--clone {
+  animation-play-state: paused;
+}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track,
+  .ticker-track--clone {
+    animation: none;
+  }
+}
+
+/* Responsive tweaks 
+@media (max-width: 600px) {
+  .ticker-item {
+    min-width: 300px;
+    padding: 0.4rem 0.9rem;
+  }
+  
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  } 
+  .review-text { font-size: 0.85rem; }
+}
+*/
+/* -------------------------------------------------------
+   TITLES WITH GOLD UNDERLINE
+------------------------------------------------------- */
+.projects-title {
+  position: relative;
+  padding-bottom: 0.4rem;
+  font-size: 3rem; /* can adjust as needed */
+  color: var(--color-blue-dark) !important;
+}
+
+.projects-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold-accent);
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------
+   PROJECTS
+------------------------------------------------------- */
+.project-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------
+   ABOUT
+------------------------------------------------------- */
+.about-img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------
+   CONTACT FORM
+------------------------------------------------------- */
+.custom-btn-primary {
+  background: var(--color-blue-primary);
+  color: var(--color-white);
+  border: none;
+  transition: 0.2s ease;
+}
+
+.custom-btn-primary:hover {
+  background: var(--color-blue-dark);
+  transform: translateY(-2px);
+}
