@@ -19,21 +19,67 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav id="mainNav" class="navbar fixed-top shadow-sm py-2 custom-navbar">
-      <div class="container navbar-grid">
-        <!-- LEFT: LOGO -->
-        <div class="nav-left d-flex align-items-center">
-          <a class="navbar-brand fw-bold m-0 text-white logo-text" href="#hero">
-            Travaux Rénovation<br />
-            <span class="logo-joseph">Joseph</span>
-          </a>
+    <nav id="mainNav" class="navbar fixed-top shadow-sm py-2 custom-navbar ">
+        <div class="container-fluid navbar-grid">
+          <!-- LEFT: LOGO -->
+          <div class="nav-left d-flex align-items-center">
+            <a class="navbar-brand brand-wrap m-0 p-0" href="#hero">
+              <img
+                src="./images/Joseph_logo.png"
+                alt="Logo Joseph"
+                class="brand-logo me-2"
+              />
+              <span class="brand-text">
+                <span class="logo-top">Travaux Rénovation</span><br />
+                <span class="logo-joseph">Joseph</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- CENTER: NAV ITEMS -->
+          <div
+            class="nav-center position-absolute start-50 translate-middle-x d-none d-lg-flex justify-content-center align-items-center"
+          >
+            <ul class="navbar-nav flex-row gap-4">
+              <li class="nav-item">
+                <a class="nav-link nav-link-custom" href="#services"
+                  >Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-custom" href="#reviews">Projets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-custom" href="#about">À propos</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- RIGHT: CTA BUTTON -->
+          <div class="nav-right d-flex justify-content-end align-items-center">
+            <a
+              class="btn custom-btn-light rounded-3 px-3 fw-semibold d-flex align-items-center gap-2"
+              href="#contact"
+            >
+              Contactez-nous
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <!-- MOBILE TOGGLER -->
+          <button
+            class="navbar-toggler ms-2 d-lg-none custom-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobileNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
 
-        <!-- CENTER: NAV ITEMS -->
-        <div
-          class="nav-center d-none d-lg-flex justify-content-center align-items-center"
-        >
-          <ul class="navbar-nav flex-row gap-4">
+        <!-- MOBILE MENU -->
+        <div class="collapse mobile-nav" id="mobileNav">
+          <ul class="navbar-nav px-3 py-2">
             <li class="nav-item">
               <a class="nav-link nav-link-custom" href="#services">Services</a>
             </li>
@@ -45,43 +91,6 @@
             </li>
           </ul>
         </div>
-
-        <!-- RIGHT: CTA BUTTON -->
-        <div class="nav-right d-flex justify-content-end align-items-center">
-          <a
-            class="btn custom-btn-light rounded-3 px-3 fw-semibold d-flex align-items-center gap-2"
-            href="#contact"
-          >
-            Contactez-nous
-            <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- MOBILE TOGGLER -->
-        <button
-          class="navbar-toggler ms-2 d-lg-none custom-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mobileNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-
-      <!-- MOBILE MENU -->
-      <div class="collapse mobile-nav" id="mobileNav">
-        <ul class="navbar-nav px-3 py-2">
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="#reviews">Projets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-custom" href="#about">À propos</a>
-          </li>
-        </ul>
-      </div>
     </nav>
 
     <!-- HERO -->
@@ -532,21 +541,22 @@
 
           <div class="col-md-8">
             <p>
-              Je suis <strong>Joseph</strong>, auto - entrepreneur et plombier chauffagiste installateur depuis 1980.
-              Avec mon équipe, nous faisons tous types de travaux de rénovation ou de conseil en architecture d'intérieur.
+              Je suis <strong>Joseph</strong>, auto - entrepreneur et plombier
+              chauffagiste installateur depuis 1980. Avec mon équipe, nous
+              faisons tous types de travaux de rénovation ou de conseil en
+              architecture d'intérieur.
             </p>
             <p>
               Fort de plus de 40 ans d'expérience, j'ai acquis une expertise
-              approfondie dans la rénovation
-              intérieure. Mon engagement envers la qualité et la satisfaction du
-              client est au cœur de chaque projet que j'entreprends.
+              approfondie dans la rénovation intérieure. Mon engagement envers
+              la qualité et la satisfaction du client est au cœur de chaque
+              projet que j'entreprends.
             </p>
             <p>
-              Mon travail garantit la conformité aux normes PMR et offre
-              des résultats de haute qualité et durables.
+              Mon travail garantit la conformité aux normes PMR et offre des
+              résultats de haute qualité et durables.
             </p>
-<p> T.V.A. - 30437689000055
-             </p>
+            <p>T.V.A. - 30437689000055</p>
           </div>
         </div>
       </div>
@@ -559,23 +569,40 @@
 
         <!-- Contact description text -->
         <p class="contact-description text-center mb-5">
-          Pour un devis, contactez-moi par <strong>téléphone</strong>, par <strong>WhatsApp</strong> ou par <strong>mail</strong>.
+          Pour un devis, contactez-moi par <strong>téléphone</strong>, par
+          <strong>WhatsApp</strong> ou par <strong>mail</strong>.
         </p>
 
         <!-- Contact buttons -->
-        <div class="contact-buttons d-flex justify-content-center gap-4 flex-wrap">
+        <div
+          class="contact-buttons d-flex justify-content-center gap-4 flex-wrap"
+        >
           <!-- Phone button -->
-          <a href="tel:+33XXXXXXXXXX" class="contact-btn phone-btn" aria-label="Call us">
+          <a
+            href="tel:+33XXXXXXXXXX"
+            class="contact-btn phone-btn"
+            aria-label="Call us"
+          >
             <i class="bi bi-telephone-fill"></i>
           </a>
 
           <!-- WhatsApp button -->
-          <a href="https://wa.me/33XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp-btn" aria-label="WhatsApp us">
+          <a
+            href="https://wa.me/33XXXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-btn whatsapp-btn"
+            aria-label="WhatsApp us"
+          >
             <i class="bi bi-whatsapp"></i>
           </a>
 
           <!-- Email button -->
-          <a href="mailto:emailde@joseph.fr" class="contact-btn email-btn" aria-label="Email us">
+          <a
+            href="mailto:emailde@joseph.fr"
+            class="contact-btn email-btn"
+            aria-label="Email us"
+          >
             <i class="bi bi-envelope-fill"></i>
           </a>
         </div>

@@ -8,6 +8,11 @@
   --color-gold-accent: #c9a449;
   --color-gray-light: #f3f4f6;
   --color-gray-text: #6b7280;
+  --brand-logo-size: clamp(75px, 10vw, 150px);
+  --brand-logo-small-scale: 1;
+  --brand-stack-break: 576px;
+  --brand-top-size: clamp(0.9rem, 2.4vw, 1.05rem);
+  --brand-joseph-size: clamp(1.25rem, 4.5vw, 2rem);
 }
 
 /* -------------------------------------------------------
@@ -16,7 +21,7 @@
 body {
   font-family: "Inter", sans-serif;
   color: var(--color-gray-text);
-  padding-top: 80px;
+  padding-top: 0px;
   scroll-behavior: smooth;
   background: linear-gradient(
     rgba(6, 47, 82, 0.6),
@@ -35,6 +40,9 @@ body {
 .custom-navbar {
   background: var(--color-white);
   border-bottom: 4px solid var(--color-gold-accent);
+  width: 100%;
+  padding: 0.5rem 0;
+  flex-wrap: nowrap;
 }
 
 .navbar-grid {
@@ -42,9 +50,12 @@ body {
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   width: 100%;
+  margin: 0 15px;
 }
 #mainNav {
   transition: transform 0.35s ease, background-color 0.2s ease;
+  width: 100%;
+  align-items: center;
 }
 
 /* Hidden state */
@@ -57,21 +68,48 @@ body {
   transform: translateY(0);
 }
 
-/* Logo */
-.logo-text {
-  line-height: 1.1;
-  font-size: 1.05rem;
-  text-align: left;
-  color: var(--color-blue-primary) !important;
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
 }
 
-.logo-joseph {
-  font-size: 2rem;
-  font-weight: 800;
+.brand-logo {
+  width: var(--brand-logo-size);
+  height: auto;
   display: block;
+  object-fit: contain;
+}
+
+.brand-text {
+  line-height: 1;
+  color: var(--color-blue-primary);
+  display: inline-block;
+  text-align: left;
+}
+
+.brand-text .logo-top {
+  display: block;
+  font-size: var(--brand-top-size);
+  font-weight: 600;
+  color: var(--color-blue-primary);
+  margin-bottom: -10px;
+}
+
+.brand-text .logo-joseph {
+  display: block;
+  font-size: var(--brand-joseph-size);
+  font-weight: 800;
+  color: var(--color-blue-dark);
+  margin-top: -10px;
   text-align: center;
-  margin-top: -2px;
-  color: var(--color-blue-dark) !important;
+}
+
+/* Ensure navbar spacing still aligns visually */
+.nav-left .brand-wrap {
+  display: flex;
+  align-items: center;
 }
 
 /* Navbar links */
@@ -99,31 +137,7 @@ body {
   color: var(--color-white) !important;
 }
 
-/* Responsive sizing for small screens */
-@media (max-width: 768px) {
-  .custom-btn-light {
-    padding: 0.4rem 0.75rem !important;
-    font-size: 0.85rem;
-  }
 
-  .custom-btn-light i {
-    font-size: 0.9rem;
-  }
-  .custom-btn-light i {
-    display: none;
-  }
-}
-
-@media (max-width: 576px) {
-  .custom-btn-light {
-    padding: 0.35rem 0.6rem !important;
-    font-size: 0.8rem;
-  }
-
-  .custom-btn-light i {
-    font-size: 0.85rem;
-  }
-}
 
 /* Mobile */
 .custom-toggler {
@@ -146,9 +160,65 @@ body {
   }
   .navbar-grid {
     grid-template-columns: 1fr auto;
+    padding: 0 10px;
+    margin: 2px 10px;
   }
   .nav-right {
     display: none;
+  }
+}
+/* Responsive sizing for small screens */
+@media (max-width: 768px) {
+  .custom-btn-light {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.85rem;
+  }
+
+  .custom-btn-light i {
+    font-size: 0.9rem;
+  }
+  .custom-btn-light i {
+    display: none;
+  }
+}
+/* Small screens: stack logo above text and reduce sizes */
+@media (max-width: 576px) {
+  .brand-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .brand-logo {
+    width: calc(var(--brand-logo-size) * var(--brand-logo-small-scale));
+  }
+
+  .brand-text {
+    text-align: center;
+  }
+
+  .brand-text .logo-top {
+    font-size: clamp(0.9rem, 6vw, 1.05rem);
+  }
+
+  .brand-text .logo-joseph {
+    font-size: clamp(1.05rem, 8vw, 2rem);
+  }
+  .custom-navbar {
+    flex-wrap: wrap;
+  }
+  .custom-btn-light {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.8rem;
+  }
+
+  .custom-btn-light i {
+    font-size: 0.85rem;
+  }
+  .navbar-grid {
+    grid-template-columns: 1fr auto;
+    padding: 0 1px;
+    margin: 2px 4px;
   }
 }
 
@@ -573,7 +643,6 @@ body {
   }
 }
 
-*/
 /* -------------------------------------------------------
     PROJECTS sections
 ------------------------------------------------------- */
