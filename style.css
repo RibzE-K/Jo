@@ -341,6 +341,12 @@ body {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  .hero-section {
+  background: linear-gradient(
+      rgba(6, 47, 82, 0.6),
+      /* dark overlay for contrast */ rgba(6, 47, 82, 0.6)
+    ),
+    url("./images/placo-before-mobile.jpg") no-repeat center center;  }
 }
 
 /* -------------------------------------------------------
