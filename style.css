@@ -137,8 +137,6 @@ body {
   color: var(--color-white) !important;
 }
 
-
-
 /* Mobile */
 .custom-toggler {
   color: var(--color-gold-accent);
@@ -236,7 +234,7 @@ body {
   background-attachment: fixed; /* optional parallax effect */
   background-position: center;
   background-repeat: no-repeat;
-
+  height: 100dvh;
   color: var(--color-white);
   position: relative;
 }
