@@ -703,8 +703,27 @@ section#projects.projects-section {
 }
 
 .project-img {
-  height: 450px;
-  object-fit: cover;
+  width: 100%;
+  /* larger responsive height */
+  height: clamp(600px, 72vh, 1200px);
+  object-fit: cover;                 /* keep consistent layout while filling */
+  object-position: center 32%;       /* nudge visible area slightly up (adjustable) */
+}
+
+/* Give even more vertical space on very large screens */
+@media (min-width: 1400px) {
+  .project-img {
+    height: clamp(900px, 78vh, 1600px);
+    object-position: center 36%;
+  }
+}
+
+/* Slightly reduce height on medium-large screens if needed */
+@media (max-width: 1200px) {
+  .project-img {
+    height: clamp(560px, 64vh, 980px);
+    object-position: center 32%;
+  }
 }
 
 /* -------------------------------------------------------
@@ -721,6 +740,7 @@ section#projects.projects-section {
   position: relative;
   border: none !important;
 }
+
 
 .about-title {
   display: inline-block;
